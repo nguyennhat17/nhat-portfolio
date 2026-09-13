@@ -17,6 +17,12 @@ let currentPage = 0;
 
 function showPage(index) {
 
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "auto"
+    });
+
     pages.forEach(function (page) {
 
         if (page) {
@@ -33,15 +39,7 @@ function showPage(index) {
     }
 
 
-    if (activePage.classList.contains("hero")) {
-
-        activePage.style.display = "grid";
-
-    } else {
-
-        activePage.style.display = "flex";
-
-    }
+    activePage.style.display = "flex";
 
     navItems.forEach(function (item, itemIndex) {
 
