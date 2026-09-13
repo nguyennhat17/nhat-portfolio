@@ -1,12 +1,16 @@
+const projectScreens = document.querySelectorAll(".project-screen");
+
 const pages = [
     document.querySelector(".hero"),
     document.querySelector(".about-screen"),
-    document.querySelector(".project-screen")
+    ...projectScreens
 ];
 
 const arrows = document.querySelectorAll(".arrow-button");
 const navItems = document.querySelectorAll(".nav-item");
-const navPages = [0, 1, 2, null, null, null];
+const navPages = Array.from(navItems, function (item, index) {
+    return index;
+});
 
 let currentPage = 0;
 
@@ -83,6 +87,30 @@ navItems.forEach(function (item, itemIndex) {
     }
 
     item.addEventListener("click", function () {
+
+        currentPage = pageIndex;
+
+        showPage(currentPage);
+
+    });
+
+});
+
+
+document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+
+    link.addEventListener("click", function (event) {
+
+        const targetId = link.getAttribute("href").slice(1);
+        const pageIndex = pages.findIndex(function (page) {
+            return page && page.id === targetId;
+        });
+
+        if (pageIndex === -1) {
+            return;
+        }
+
+        event.preventDefault();
 
         currentPage = pageIndex;
 
