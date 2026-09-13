@@ -1,42 +1,126 @@
-﻿const homeScreen = document.querySelector(".hero");
-const aboutScreen = document.querySelector(".about-screen");
+const pages = [
+    document.querySelector(".hero"),
+    document.querySelector(".about-screen"),
+    document.querySelector(".project-screen")
+];
 
 const arrows = document.querySelectorAll(".arrow-button");
+const navItems = document.querySelectorAll(".nav-item");
+const navPages = [0, 1, 2, null, null, null];
 
 let currentPage = 0;
 
-function showPage(page) {
 
-    if (page === 0) {
+function showPage(index) {
 
-        homeScreen.style.display = "grid";
-        aboutScreen.style.display = "none";
+    pages.forEach(function (page) {
+
+        if (page) {
+            page.style.display = "none";
+        }
+
+    });
+
+
+    const activePage = pages[index];
+
+    if (!activePage) {
+        return;
+    }
+
+
+    if (activePage.classList.contains("hero")) {
+
+        activePage.style.display = "grid";
+
+    } else {
+
+        activePage.style.display = "flex";
 
     }
 
-    if (page === 1) {
+    navItems.forEach(function (item, itemIndex) {
 
-        homeScreen.style.display = "none";
-        aboutScreen.style.display = "flex";
+        item.classList.toggle("active", navPages[itemIndex] === index);
 
-    }
+    });
 
 }
 
 
 arrows[1].addEventListener("click", function () {
 
-    currentPage = 1;
+    if (currentPage < pages.length - 1) {
 
-    showPage(currentPage);
+        currentPage++;
+
+        showPage(currentPage);
+
+    }
 
 });
 
 
 arrows[0].addEventListener("click", function () {
 
-    currentPage = 0;
+    if (currentPage > 0) {
 
-    showPage(currentPage);
+        currentPage--;
+
+        showPage(currentPage);
+
+    }
 
 });
+
+
+navItems.forEach(function (item, itemIndex) {
+
+    const pageIndex = navPages[itemIndex];
+
+    if (pageIndex === null) {
+        return;
+    }
+
+    item.addEventListener("click", function () {
+
+        currentPage = pageIndex;
+
+        showPage(currentPage);
+
+    });
+
+});
+
+
+document.addEventListener("keydown", function (event) {
+
+    if (event.key === "ArrowRight") {
+
+        if (currentPage < pages.length - 1) {
+
+            currentPage++;
+
+            showPage(currentPage);
+
+        }
+
+    }
+
+
+    if (event.key === "ArrowLeft") {
+
+        if (currentPage > 0) {
+
+            currentPage--;
+
+            showPage(currentPage);
+
+        }
+
+    }
+
+});
+
+
+showPage(currentPage);
