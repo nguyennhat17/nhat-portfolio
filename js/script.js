@@ -1,152 +1,39 @@
-const projectScreens = document.querySelectorAll(".project-screen");
-
-const pages = [
-    document.querySelector(".hero"),
-    document.querySelector(".about-screen"),
-    ...projectScreens
-];
-
-const arrows = document.querySelectorAll(".arrow-button");
-const navItems = document.querySelectorAll(".nav-item");
-const navPages = Array.from(navItems, function (item, index) {
-    return index;
-});
-
+const pages = [...document.querySelectorAll('main > section')];
+const navItems = [...document.querySelectorAll('.nav-item, .top-nav a[href^="#"]')];
+const arrows = document.querySelectorAll('.arrow-button');
 let currentPage = 0;
 
-
-function showPage(index) {
-
-    window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "auto"
+function showPage() {
+    const id = window.location.hash.slice(1) || 'home';
+    const index = pages.findIndex(page => page.id === id);
+    if (index < 0) return;
+    currentPage = index;
+    pages.forEach((page, i) => {
+        page.hidden = i !== index;
     });
-
-    pages.forEach(function (page) {
-
-        if (page) {
-            page.style.display = "none";
-        }
-
+    const group = pages[index].classList.contains('project-screen') ? 'projects' : id;
+    navItems.forEach(item => {
+        const active = item.hash === `#${group}`;
+        item.classList.toggle('active', active);
+        if (active) item.setAttribute('aria-current', 'page');
+        else item.removeAttribute('aria-current');
     });
-
-
-    const activePage = pages[index];
-
-    if (!activePage) {
-        return;
-    }
-
-
-    activePage.style.display = "flex";
-
-    navItems.forEach(function (item, itemIndex) {
-
-        item.classList.toggle("active", navPages[itemIndex] === index);
-
-    });
-
+    arrows[0].disabled = index === 0;
+    arrows[1].disabled = index === pages.length - 1;
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    const heading = pages[index].querySelector('h1, h2');
+    heading.setAttribute('tabindex', '-1');
+    heading.focus({ preventScroll: true });
 }
 
-
-arrows[1].addEventListener("click", function () {
-
-    if (currentPage < pages.length - 1) {
-
-        currentPage++;
-
-        showPage(currentPage);
-
-    }
-
-});
-
-
-arrows[0].addEventListener("click", function () {
-
-    if (currentPage > 0) {
-
-        currentPage--;
-
-        showPage(currentPage);
-
-    }
-
-});
-
-
-navItems.forEach(function (item, itemIndex) {
-
-    const pageIndex = navPages[itemIndex];
-
-    if (pageIndex === null) {
-        return;
-    }
-
-    item.addEventListener("click", function () {
-
-        currentPage = pageIndex;
-
-        showPage(currentPage);
-
-    });
-
-});
-
-
-document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-
-    link.addEventListener("click", function (event) {
-
-        const targetId = link.getAttribute("href").slice(1);
-        const pageIndex = pages.findIndex(function (page) {
-            return page && page.id === targetId;
-        });
-
-        if (pageIndex === -1) {
-            return;
-        }
-
-        event.preventDefault();
-
-        currentPage = pageIndex;
-
-        showPage(currentPage);
-
-    });
-
-});
-
-
-document.addEventListener("keydown", function (event) {
-
-    if (event.key === "ArrowRight") {
-
-        if (currentPage < pages.length - 1) {
-
-            currentPage++;
-
-            showPage(currentPage);
-
-        }
-
-    }
-
-
-    if (event.key === "ArrowLeft") {
-
-        if (currentPage > 0) {
-
-            currentPage--;
-
-            showPage(currentPage);
-
-        }
-
-    }
-
-});
-
-
-showPage(currentPage);
+arrows.forEach((arrow, i) => arrow.addEventListener('click', () => {
+    const next = pages[currentPage + (i ? 1 : -1)];
+    if (next) window.location.hash = next.id;
+}));
+window.addEventListener('hashchange', showPage);
+// Enhance anchor navigation while retaining readable content without JavaScript.
+document.documentElement.classList.add('js');
+if (!pages.some(page => `#${page.id}` === window.location.hash)) {
+    history.replaceState(null, '', '#home');
+}
+showPage();

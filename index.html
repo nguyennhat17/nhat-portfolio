@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
     <header class="top-bar">
 
@@ -23,16 +24,19 @@
             </div>
         </div>
 
-        <nav class="top-nav">
+        <nav class="top-nav" aria-label="Main navigation">
             <a href="#about">ABOUT</a>
-            <a href="#symphony">PROJECTS</a>
+            <a href="#projects">PROJECTS</a>
+            <a href="#academic">ACADEMIC &amp; EXPERIENCE</a>
             <a href="#contact">CONTACT</a>
+            <a class="resume-link" href="files/Nguyen-Minh-Nhat-Resume.pdf" target="_blank" rel="noopener">RESUME ↗</a>
         </nav>
 
     </header>
 
 
-    <main class="hero">
+    <main id="main-content">
+    <section class="hero" id="home">
 
         <div class="hero-content">
 
@@ -53,7 +57,8 @@
 
         </div>
 
-        <div class="project-preview">
+        <div class="hero-buttons"><a href="#projects" class="button button-primary">EXPLORE PROJECTS</a><a href="files/Nguyen-Minh-Nhat-Resume.pdf" class="button button-secondary" download>DOWNLOAD RESUME ↓</a></div>
+        <a class="project-preview" href="#symphony" aria-label="Explore The Greatest Symphony">
 
             <img src="images/greatest-symphony/cover.png"
                  alt="The Greatest Symphony">
@@ -63,9 +68,9 @@
                 <strong>The Greatest Symphony</strong>
             </div>
 
-        </div>
+        </a>
 
-    </main>
+    </section>
     <section class="about-screen" id="about">
 
         <div class="about-content">
@@ -114,6 +119,7 @@
 
     </section>
 
+<section class="content-screen" id="projects"><div class="section-content"><p class="section-label">SELECTED WORK / 01—05</p><h2>IDEAS INTO <span>PLAY.</span></h2><p class="section-intro">Gameplay, combat and level design through collaborative game projects.</p><div class="project-grid"><a class="project-card" href="#symphony"><img src="images/greatest-symphony/cover.png" alt="" loading="lazy"><div><p class="section-label">2024 / Platformer · Puzzle</p><h3>The Greatest Symphony</h3><span>VIEW PROJECT ↗</span></div></a><a class="project-card" href="#fedup"><img src="images/Road%20from%20Fed-up%20to%20Hero/cover.png" alt="" loading="lazy"><div><p class="section-label">2026 / Pixel Art · Educational Puzzle</p><h3>Road from Fed-up to Hero</h3><span>VIEW PROJECT ↗</span></div></a><a class="project-card" href="#hero-academy"><img src="images/Hero%20Academy/cover.png" alt="" loading="lazy"><div><p class="section-label">2025 / 2D · Top-down Roguelike</p><h3>Hero Academy</h3><span>VIEW PROJECT ↗</span></div></a><a class="project-card" href="#steel-arena"><img src="images/Steel%20Arena/cover.png" alt="" loading="lazy"><div><p class="section-label">2026 / Action · Voice Control</p><h3>Steel Arena</h3><span>VIEW PROJECT ↗</span></div></a><a class="project-card" href="#kidnap"><img src="images/The%20Kidnap/cover.png" alt="" loading="lazy"><div><p class="section-label">2025 / Horror · Puzzle</p><h3>The Kidnap</h3><span>VIEW PROJECT ↗</span></div></a></div></div></section>
     <section class="project-screen" id="symphony">
 
         <div class="project-layout">
@@ -131,41 +137,19 @@
 
             <div class="project-details">
 
-                <p class="project-year">2024 / Narrative • Platformer • Puzzle</p>
+                <p class="project-year">2024 / Platformer · Puzzle</p>
 
                 <h2>
                     THE GREATEST
                     <span>SYMPHONY</span>
                 </h2>
 
-                <p class="project-summary">
-                    A narrative-driven 2D platformer following Forte,
-                    a young musician navigating grief, family pressure
-                    and his passion for music.
-                </p>
+                <p class="project-summary">A narrative action-platformer following Forte as he discovers his late father’s unfinished compositions. Journey through a world shaped by grief and music, exploring loss, resilience and the hope of finding a way forward.</p>
 
-                <div class="project-meta">
-
-                    <div>
-                        <small>ROLE</small>
-                        <p>Game Designer, Mechanic Developer, Level Designer, Research</p>
-                    </div>
-
-                    <div>
-                        <small>ENGINE</small>
-                        <p>Unity</p>
-                    </div>
-
-                    <div>
-                        <small>TEAM</small>
-                        <p>4 Members</p>
-                    </div>
-
-                </div>
-
+                <div class="project-meta"><div><small>MY ROLE</small><p>Level Designer & Programmer · Playtesting</p></div><div><small>TOOLS</small><p>Unity · C#</p></div></div>
                 <div class="project-actions">
 
-                    <a href="#" class="button button-primary">
+                    <a href="https://theitguygame.itch.io/the-greatest-symphony" class="button button-primary" target="_blank" rel="noopener" aria-label="Play The Greatest Symphony on itch.io (opens in a new tab)">
                         PLAY HERE
                     </a>
 
@@ -194,22 +178,19 @@
 
             <div class="project-details">
 
-                <p class="project-year">Pixel Art • Adventure • Story</p>
+                <p class="project-year">2026 / Pixel Art · Educational Puzzle</p>
 
                 <h2>
                     ROAD FROM
                     <span>FED-UP TO HERO</span>
                 </h2>
 
-                <p class="project-summary">
-                    A pixel-art adventure about an ordinary character pushed from
-                    frustration into a heroic journey, using readable spaces and
-                    playful progression to guide the player forward.
-                </p>
+                <p class="project-summary">A story-driven pixel-art puzzle game about a student caught between studying and his love of gaming. Solve chemistry mini-games through his study sessions and follow a bittersweet journey about effort, distraction and finding an unexpected path to success.</p>
 
+                <div class="project-meta"><div><small>MY ROLE</small><p>Gameplay Programmer & Game Designer · Playtesting</p></div><div><small>TOOLS</small><p>Unity · C#</p></div></div>
                 <div class="project-actions">
 
-                    <a href="#" class="button button-primary">
+                    <a href="https://chuong-vo.itch.io/road-from-fed-up-to-hero" class="button button-primary" target="_blank" rel="noopener" aria-label="Play Road from Fed-up to Hero on itch.io (opens in a new tab)">
                         PLAY HERE
                     </a>
 
@@ -238,22 +219,19 @@
 
             <div class="project-details">
 
-                <p class="project-year">3D • Character • Academy</p>
+                <p class="project-year">2025 / 2D · Top-down Roguelike</p>
 
                 <h2>
                     HERO
                     <span>ACADEMY</span>
                 </h2>
 
-                <p class="project-summary">
-                    A stylized 3D project built around a bright hero-school
-                    identity, clear character presentation and a playful tone
-                    that helps the world feel approachable.
-                </p>
+                <p class="project-summary">Step into the shoes of a hero-in-training and take on the A3 Test. Wield a physics-based weapon, dash through challenges and throw your disc with precision to prove you have what it takes to become a hero.</p>
 
+                <div class="project-meta"><div><small>MY ROLE</small><p>Programmer & Game Designer · Playtesting</p></div><div><small>TOOLS</small><p>Unity · C#</p></div></div>
                 <div class="project-actions">
 
-                    <a href="#" class="button button-primary">
+                    <a href="https://romet0123.itch.io/hero-academy-a3-test" class="button button-primary" target="_blank" rel="noopener" aria-label="Play Hero Academy on itch.io (opens in a new tab)">
                         PLAY HERE
                     </a>
 
@@ -282,22 +260,19 @@
 
             <div class="project-details">
 
-                <p class="project-year">Action • Sci-Fi • Arena</p>
+                <p class="project-year">2026 / Action · Voice Control</p>
 
                 <h2>
                     STEEL
                     <span>ARENA</span>
                 </h2>
 
-                <p class="project-summary">
-                    A sci-fi combat project centered on a heavy armored fighter,
-                    built for quick visual readability, strong impact and an
-                    arena-style action fantasy.
-                </p>
+                <p class="project-summary">A voice-controlled robot boxing game that puts you in the coach’s corner. Shout commands for punches and uppercuts to direct your robot in real-time arena combat, where timing and quick decisions shape the fight. A microphone is required.</p>
 
+                <div class="project-meta"><div><small>MY ROLE</small><p>Animator · Programmer · Playtesting</p></div></div>
                 <div class="project-actions">
 
-                    <a href="#" class="button button-primary">
+                    <a href="https://romet0123.itch.io/steel-arena" class="button button-primary" target="_blank" rel="noopener" aria-label="Play Steel Arena on itch.io (opens in a new tab)">
                         PLAY HERE
                     </a>
 
@@ -326,22 +301,19 @@
 
             <div class="project-details">
 
-                <p class="project-year">2025 / Horror • Puzzle</p>
+                <p class="project-year">2025 / Horror · Puzzle</p>
 
                 <h2>
                     THE
                     <span>KIDNAP</span>
                 </h2>
 
-                <p class="project-summary">
-                    After a long, exhausting day, you climb into a taxi to head
-                    home. The driver stays unsettlingly silent, the route turns
-                    strange and everything goes black.
-                </p>
+                <p class="project-summary">A taxi ride home takes a sinister turn, leaving you trapped in an abandoned prison. Explore dark corridors, search for clues and solve puzzles to escape while uncovering the horrors hidden within its walls.</p>
 
+                <div class="project-meta"><div><small>MY ROLE</small><p>Level Designer · Playtesting</p></div></div>
                 <div class="project-actions">
 
-                    <a href="#" class="button button-primary">
+                    <a href="https://romet0123.itch.io/the-kidnap" class="button button-primary" target="_blank" rel="noopener" aria-label="Play The Kidnap on itch.io (opens in a new tab)">
                         PLAY HERE
                     </a>
 
@@ -353,50 +325,39 @@
 
     </section>
 
+
+    <section class="content-screen" id="academic"><div class="section-content">
+        <p class="section-label">ACADEMIC &amp; EXPERIENCE</p><h2>LEARNING THROUGH <span>MAKING.</span></h2>
+        <p class="section-intro">A foundation in game design, technical practice and understanding players.</p>
+        <div class="experience-grid"><div>
+        <article class="experience-card"><p class="section-label">EDUCATION / OCT 2023 — APR 2027 (EXPECTED)</p><h3>Bachelor of Design (Games)</h3><p class="organization">RMIT University Vietnam · Ho Chi Minh City</p><p>Final-year student developing gameplay systems, levels and playable Unity prototypes across collaborative projects.</p></article>
+        <article class="experience-card"><p class="section-label">RESEARCH / AUG 2024</p><h3>The Academic Research of The Sims Franchise</h3><p class="organization">Game Research Contributor · RMIT University Vietnam</p><p>Conducted approximately 30% of the team’s research and comparative analysis, exploring learning curves, social dynamics, world-building and audiovisual design across the series.</p><a class="text-link" href="https://www.rmitvn-showcase.com/scd-games-y1/the-academic-research-of-the-sims-franchise" target="_blank" rel="noopener">View on RMIT Vietnam Showcase ↗</a></article>
+        <article class="experience-card"><p class="section-label">ADDITIONAL EXPERIENCE / 2021 — 2023</p><h3>Customer Service &amp; Waiter</h3><p class="organization">Family-run businesses · Ho Chi Minh City</p><p>Supported customer service and restaurant operations in informal and part-time roles, building communication, teamwork, reliability and problem-solving skills.</p></article>
+        </div><aside class="skills-panel"><h3>My toolkit</h3><h4>Game design &amp; QA</h4><p>Gameplay &amp; combat design · Level design · Prototyping · Playtesting · Game balancing · QA testing</p><h4>Software &amp; programming</h4><p>Unity · C# · Aseprite · Blender · UI &amp; audio implementation</p><h4>Collaboration</h4><p>Documentation · Research &amp; analysis · Communication · Feedback &amp; iteration</p><h4>Languages</h4><p>Vietnamese — Native<br>English — Professional working proficiency</p><a href="files/Nguyen-Minh-Nhat-Resume.pdf" class="button button-secondary" download>DOWNLOAD RESUME ↓</a></aside></div>
+    </div></section>
+    <section class="content-screen" id="contact"><div class="section-content contact-content">
+        <p class="section-label">CONTACT / LET’S CONNECT</p><h2>LET’S MAKE SOMETHING <span>WORTH PLAYING.</span></h2>
+        <p class="section-intro">Seeking graduate Game Designer opportunities, with additional interest in QA, game testing and game development.</p>
+        <div class="contact-grid"><a class="contact-card" href="mailto:nmnguyengamedesign@gmail.com"><small>EMAIL ↗</small><strong>nmnguyengamedesign@gmail.com</strong><span>Get in touch about a role or project</span></a><a class="contact-card" href="https://www.linkedin.com/in/nh%E1%BA%ADt-nguy%E1%BB%85n-minh-a95831394/" target="_blank" rel="noopener"><small>LINKEDIN ↗</small><strong>Nguyen Minh Nhat</strong><span>Connect professionally</span></a></div>
+        <div class="hero-buttons"><a class="button button-primary" href="mailto:nmnguyengamedesign@gmail.com">SAY HELLO ↗</a><a class="button button-secondary" href="files/Nguyen-Minh-Nhat-Resume.pdf" download>DOWNLOAD RESUME ↓</a></div>
+        <p class="contact-footer">NGUYEN MINH NHAT · GAME DESIGNER · HO CHI MINH CITY, VIETNAM</p>
+    </div></section>
+    </main>
+
     <div class="side-navigation">
 
-        <button class="arrow-button">
+        <button class="arrow-button" aria-label="Previous section">
             ‹
         </button>
 
-        <button class="arrow-button">
+        <button class="arrow-button" aria-label="Next section">
             ›
         </button>
 
     </div>
 
 
-    <nav class="bottom-navigation">
-
-        <button class="nav-item active">
-            HOME
-        </button>
-
-        <button class="nav-item">
-            ABOUT ME
-        </button>
-
-        <button class="nav-item" aria-label="The Greatest Symphony">
-            SYMPHONY
-        </button>
-
-        <button class="nav-item" aria-label="Road from Fed-up to Hero">
-            FED-UP
-        </button>
-
-        <button class="nav-item" aria-label="Hero Academy">
-            ACADEMY
-        </button>
-
-        <button class="nav-item" aria-label="Steel Arena">
-            ARENA
-        </button>
-
-        <button class="nav-item" aria-label="The Kidnap">
-            KIDNAP
-        </button>
-
-    </nav>
+    <nav class="bottom-navigation" aria-label="Section navigation"><a class="nav-item" href="#home">HOME</a><a class="nav-item" href="#about">ABOUT ME</a><a class="nav-item" href="#projects">PROJECTS</a><a class="nav-item" href="#academic">EXPERIENCE</a><a class="nav-item" href="#contact">CONTACT</a></nav>
 
 
     <script src="js/script.js"></script>
