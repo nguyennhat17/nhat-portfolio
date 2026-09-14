@@ -1,1 +1,4 @@
 .vs/
+
+# Keep the full-resolution source locally; publish trailer-web.mp4 instead.
+/videos/hero-academy/Trailer.mp4

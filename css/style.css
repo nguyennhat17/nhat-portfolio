@@ -873,3 +873,14 @@ body:has(.image-viewer[open]) { overflow: hidden; }
 .process-gallery { gap: 20px; }
 .process-gallery img { aspect-ratio: 4/3; }
 @media (max-width: 700px) { .process-videos, .process-gallery { grid-template-columns: 1fr; } .project-process { margin-top: 45px; scroll-margin-top: 90px; } }
+
+.team-credit { margin-top: 24px; padding-top: 20px; border-top: 1px solid #352844; color: #c5bbd1; font-size: 14px; line-height: 1.8; }
+.team-credit .team-label { color: #c4a7ff; font-size: 10px; font-weight: 800; letter-spacing: 1.5px; margin-bottom: 6px; }
+.team-links { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 10px; }
+.team-links a { color: #ded0f7; text-underline-offset: 4px; }
+.team-links a:hover { color: #b99ce9; }
+.project-trailer { width: min(1200px, 100%); margin-top: 65px; padding-top: 35px; border-top: 1px solid #352844; scroll-margin-top: 115px; }
+.project-trailer h2 { font-size: clamp(30px, 4vw, 48px); margin-bottom: 26px; }
+.project-trailer h2 span { color: #b99ce9; }
+.project-trailer video { display: block; width: 100%; aspect-ratio: 256/135; border: 1px solid #62428b; border-radius: 8px; background: #060408; }
+@media (max-width: 700px) { .project-trailer { scroll-margin-top: 90px; } }
