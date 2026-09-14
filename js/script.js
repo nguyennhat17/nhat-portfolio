@@ -37,3 +37,41 @@ if (!pages.some(page => `#${page.id}` === window.location.hash)) {
     history.replaceState(null, '', '#home');
 }
 showPage();
+
+const viewer = document.querySelector('.image-viewer');
+const viewerImage = viewer.querySelector('.viewer-image');
+const viewerTitle = viewer.querySelector('#viewer-title');
+const viewerCounter = viewer.querySelector('.viewer-counter');
+const previousImage = viewer.querySelector('.viewer-previous');
+const nextImage = viewer.querySelector('.viewer-next');
+let galleryImages = [];
+let imageIndex = 0;
+function displayImage(index) {
+    imageIndex = index;
+    const link = galleryImages[index];
+    viewerImage.src = link.href;
+    viewerImage.alt = link.querySelector('img').alt;
+    viewerTitle.textContent = viewerImage.alt;
+    viewerCounter.textContent = `${index + 1} / ${galleryImages.length}`;
+    previousImage.disabled = index === 0;
+    nextImage.disabled = index === galleryImages.length - 1;
+}
+document.querySelectorAll('.gameplay-gallery').forEach(gallery => {
+    gallery.addEventListener('click', event => {
+        const link = event.target.closest('.gameplay-thumbnail');
+        if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        galleryImages = [...gallery.querySelectorAll('.gameplay-thumbnail')];
+        displayImage(galleryImages.indexOf(link));
+        viewer.showModal();
+    });
+});
+previousImage.addEventListener('click', () => displayImage(imageIndex - 1));
+nextImage.addEventListener('click', () => displayImage(imageIndex + 1));
+viewer.querySelector('.viewer-close').addEventListener('click', () => viewer.close());
+viewer.addEventListener('click', event => { if (event.target === viewer) viewer.close(); });
+viewer.addEventListener('keydown', event => {
+    if (event.key === 'ArrowLeft' && imageIndex > 0) { event.preventDefault(); displayImage(imageIndex - 1); }
+    if (event.key === 'ArrowRight' && imageIndex < galleryImages.length - 1) { event.preventDefault(); displayImage(imageIndex + 1); }
+});
+window.addEventListener('hashchange', () => { if (viewer.open) viewer.close(); });

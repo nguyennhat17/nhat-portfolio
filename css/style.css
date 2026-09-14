@@ -809,3 +809,38 @@ body { background-attachment: scroll; }
     .bottom-navigation { display: grid; grid-template-columns: .8fr 1fr 1fr 1.25fr 1fr; }
     .nav-item { min-width: 0; padding: 0 4px; font-size: 9px; }
 }
+
+/* Gameplay galleries */
+.gallery-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin: 22px 0 12px; }
+.gallery-heading h3 { color: #c4a7ff; font-size: 10px; letter-spacing: 2px; }
+.gallery-heading > span { color: #a99bb9; font-size: 11px; }
+.gameplay-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.gameplay-thumbnail { display: block; position: relative; overflow: hidden; border: 1px solid #3a2b50; border-radius: 5px; background: #100c18; }
+.gameplay-thumbnail img { display: block; width: 100%; aspect-ratio: 16/9; object-fit: contain; transition: transform .2s; }
+.gameplay-thumbnail:hover { border-color: #c4a7ff; }
+.gameplay-thumbnail:hover img { transform: scale(1.04); }
+.gameplay-thumbnail > span { position: absolute; right: 5px; bottom: 5px; padding: 2px 6px; border-radius: 4px; background: #100c18d9; color: #e5d7ff; font-size: 13px; }
+.image-viewer { position: fixed; inset: 0; margin: auto; width: min(1200px, calc(100% - 32px)); max-width: none; max-height: calc(100dvh - 32px); padding: 16px; border: 1px solid #7450a4; border-radius: 12px; background: #100c18; color: #f4f4f5; box-shadow: 0 20px 100px #0009; }
+.image-viewer::backdrop { background: #030207ed; }
+.viewer-toolbar, .viewer-controls { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.viewer-toolbar { margin-bottom: 12px; }
+.viewer-toolbar h2 { font-size: 16px; line-height: 1.5; color: #dcc8ff; }
+.image-viewer button { min-height: 44px; padding: 10px 16px; border: 1px solid #62428b; border-radius: 7px; background: #241732; color: #eee3ff; cursor: pointer; }
+.image-viewer button:hover { background: #3b2555; }
+.image-viewer button:disabled { opacity: .35; cursor: default; }
+.viewer-image { display: block; width: 100%; height: min(70dvh, 740px); object-fit: scale-down; background: #060408; }
+.viewer-controls { margin-top: 12px; }
+.viewer-counter { font-size: 13px; color: #c3b3d5; }
+body:has(.image-viewer[open]) { overflow: hidden; }
+@media (max-width: 540px) {
+    .gameplay-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+    .image-viewer { width: calc(100% - 16px); max-height: calc(100dvh - 16px); padding: 12px; }
+    .viewer-toolbar h2 { font-size: 14px; }
+    .viewer-image { height: 60dvh; }
+    .image-viewer button { padding: 10px; }
+}
+@media (max-height: 500px) {
+    .viewer-image { height: 52dvh; }
+    .image-viewer { padding: 8px; }
+    .viewer-toolbar, .viewer-controls { margin: 4px 0; }
+}
