@@ -13,7 +13,7 @@ function showPage() {
     pages.forEach((page, i) => {
         page.hidden = i !== index;
     });
-    const group = pages[index].classList.contains('project-screen') ? 'projects' : id;
+    const group = pages[index].classList.contains('project-screen') ? 'projects' : pages[index].id;
     navItems.forEach(item => {
         const active = item.hash === `#${group}`;
         item.classList.toggle('active', active);
