@@ -844,3 +844,32 @@ body:has(.image-viewer[open]) { overflow: hidden; }
     .image-viewer { padding: 8px; }
     .viewer-toolbar, .viewer-controls { margin: 4px 0; }
 }
+
+.about-skills { margin-top: 48px; padding-top: 32px; border-top: 1px solid #352844; }
+.skills-heading-row { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 14px; margin-bottom: 24px; }
+.skills-heading-row h3 { font-size: clamp(26px, 4vw, 36px); letter-spacing: -1px; }
+.skills-heading-row > p { color: #b8b0c4; font-size: 13px; line-height: 1.6; }
+.skill-disclosures { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 12px; }
+.skill-disclosure { flex: 1 1 240px; border: 1px solid #352844; border-radius: 10px; background: #100c18; }
+.skill-disclosure[open], .skill-disclosure:hover { border-color: #b99ce9; }
+.skill-disclosure summary { display: flex; align-items: center; justify-content: space-between; gap: 18px; list-style: none; padding: 18px; font-size: 14px; line-height: 1.5; cursor: pointer; }
+.skill-disclosure summary::-webkit-details-marker { display: none; }
+.skill-disclosure summary::after { content: '+'; color: #c4a7ff; }
+.skill-disclosure[open] summary::after { content: '−'; }
+.skill-disclosure summary:focus-visible { outline: 2px solid #c4a7ff; outline-offset: 4px; border-radius: 10px; }
+.skill-disclosure > p { padding: 0 18px 18px; font-size: 14px; line-height: 1.8; color: #b8b0c4; }
+@media (max-width: 540px) { .skill-disclosure { flex-basis: 100%; } }
+
+#hero-academy { flex-direction: column; }
+.project-actions { flex-wrap: wrap; }
+.project-process { width: min(1200px, 100%); margin-top: 70px; padding-top: 40px; border-top: 1px solid #352844; scroll-margin-top: 115px; }
+.project-process h2 { font-size: clamp(30px, 4vw, 48px); line-height: 1.15; letter-spacing: -1px; }
+.project-process h2 span { color: #b99ce9; }
+.project-process h3 { margin: 34px 0 12px; font-size: 20px; color: #ffffff; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; line-height: 1.4; }
+.process-intro { max-width: 760px; color: #b8b0c4; line-height: 1.8; margin: 18px 0 24px; }
+.process-videos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.process-videos video { display: block; width: 100%; aspect-ratio: 16/9; background: #060408; border: 1px solid #62428b; border-radius: 8px; }
+.project-process figcaption { margin-top: 12px; color: #b8b0c4; line-height: 1.6; font-size: 13px; }
+.process-gallery { gap: 20px; }
+.process-gallery img { aspect-ratio: 4/3; }
+@media (max-width: 700px) { .process-videos, .process-gallery { grid-template-columns: 1fr; } .project-process { margin-top: 45px; scroll-margin-top: 90px; } }

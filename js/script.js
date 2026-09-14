@@ -5,8 +5,10 @@ let currentPage = 0;
 
 function showPage() {
     const id = window.location.hash.slice(1) || 'home';
-    const index = pages.findIndex(page => page.id === id);
+    const target = document.getElementById(id);
+    const index = pages.findIndex(page => page === target || page.contains(target));
     if (index < 0) return;
+    document.querySelectorAll('video').forEach(video => video.pause());
     currentPage = index;
     pages.forEach((page, i) => {
         page.hidden = i !== index;
@@ -21,7 +23,8 @@ function showPage() {
     arrows[0].disabled = index === 0;
     arrows[1].disabled = index === pages.length - 1;
     window.scrollTo({ top: 0, behavior: 'instant' });
-    const heading = pages[index].querySelector('h1, h2');
+    if (target !== pages[index]) target.scrollIntoView({ block: 'start', behavior: 'instant' });
+    const heading = target.querySelector('h1, h2');
     heading.setAttribute('tabindex', '-1');
     heading.focus({ preventScroll: true });
 }
@@ -33,7 +36,7 @@ arrows.forEach((arrow, i) => arrow.addEventListener('click', () => {
 window.addEventListener('hashchange', showPage);
 // Enhance anchor navigation while retaining readable content without JavaScript.
 document.documentElement.classList.add('js');
-if (!pages.some(page => `#${page.id}` === window.location.hash)) {
+if (!pages.some(page => page.contains(document.getElementById(window.location.hash.slice(1))))) {
     history.replaceState(null, '', '#home');
 }
 showPage();
