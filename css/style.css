@@ -929,3 +929,15 @@ body:has(.image-viewer[open]) { overflow: hidden; }
 .project-card .dream-cover strong { font-size: 28px; }
 
 .youtube-video { display: block; width: 100%; aspect-ratio: 16 / 9; border: 1px solid #62428b; border-radius: 8px; background: #060408; }
+
+/* Consistent reading typography across project descriptions and supporting copy. */
+main p:not(.section-label):not(.project-year):not(.team-label):not(.contact-footer),
+main figcaption,
+.team-links,
+.text-link,
+.contact-card > span {
+    font-family: "Times New Roman", Times, serif;
+}
+.minigame-intent > strong {
+    font-family: Arial, Helvetica, sans-serif;
+}
