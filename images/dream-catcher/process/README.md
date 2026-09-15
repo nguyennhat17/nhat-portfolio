@@ -1,0 +1,1 @@
+inspiration-01.png is the supplied cultural research slide. Add process-01.png, environment-01.png, character-01.png, ui-01.png, flowchart-01.png as needed. Continue numbering within categories and preserve actual extensions. Identify concept art, external references and AI-generated images in your notes.
