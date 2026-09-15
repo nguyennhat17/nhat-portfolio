@@ -941,3 +941,39 @@ main figcaption,
 .minigame-intent > strong {
     font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Improve readability while preserving the heading/body font distinction. */
+.skill-disclosure summary {
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.5;
+}
+.skill-disclosure summary::after { color: #d4bcff; font-size: 20px; }
+.hero-description,
+.about-description,
+.project-summary,
+.process-intro,
+.section-intro,
+.skill-disclosure > p,
+.research-methods p,
+.experience-card p:not(.section-label),
+.skills-panel p {
+    color: #ded8e8;
+    font-size: 18px;
+    line-height: 1.8;
+}
+.project-process figcaption,
+.skills-heading-row > p,
+.minigame-intent,
+.project-meta p,
+.team-credit,
+.team-links,
+.text-link,
+.contact-card > span {
+    color: #d8cee4;
+    font-size: 16px;
+    line-height: 1.7;
+}
+.gallery-heading > span { color: #cfc0df; font-size: 13px; }
