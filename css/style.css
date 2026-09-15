@@ -977,3 +977,25 @@ main figcaption,
     line-height: 1.7;
 }
 .gallery-heading > span { color: #cfc0df; font-size: 13px; }
+
+
+.artwork-categories { display: grid; grid-template-columns: 1fr; gap: 36px; }
+.artwork-categories > section { border-top: 1px solid #352844; padding-top: 28px; }
+.artwork-categories h3 { font-size: 26px; color: #ffffff; margin-bottom: 16px; }
+.artwork-categories p:not(.section-label) { color: #ded8e8; font-size: 18px; line-height: 1.8; margin-bottom: 24px; }
+.artwork-grid:empty { display: none; }
+.artwork-grid img { aspect-ratio: auto; object-fit: contain; }
+@media (max-width: 540px) { .bottom-navigation { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+
+.artwork-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.artwork-card { min-width: 0; border: 1px solid #352844; border-radius: 10px; overflow: hidden; background: #100c18; }
+.artwork-card .gameplay-thumbnail { border: 0; border-radius: 0; background: #30283c; }
+.artwork-grid .pixel-art img { width: 100%; height: 260px; aspect-ratio: auto; object-fit: contain; image-rendering: pixelated; padding: 20px; }
+.artwork-card figcaption { padding: 18px 20px; color: #ded8e8; }
+.artwork-card figcaption strong { display: block; font: 700 17px/1.5 Arial, Helvetica, sans-serif; color: #ffffff; }
+.artwork-card figcaption > span { display: block; margin-top: 6px; font: 16px/1.6 "Times New Roman", Times, serif; color: #d8cee4; }
+.pixel-art:hover img { transform: none; }
+.viewer-image.pixel-art-view { image-rendering: pixelated; object-fit: contain; }
+@media (max-width: 900px) { .artwork-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 540px) { .artwork-grid { grid-template-columns: 1fr; } }

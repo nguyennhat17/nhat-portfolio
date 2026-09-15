@@ -52,6 +52,7 @@ let imageIndex = 0;
 function displayImage(index) {
     imageIndex = index;
     const link = galleryImages[index];
+    viewerImage.classList.toggle("pixel-art-view", link.classList.contains("pixel-art"));
     viewerImage.src = link.href;
     viewerImage.alt = link.querySelector('img').alt;
     viewerTitle.textContent = viewerImage.alt;
