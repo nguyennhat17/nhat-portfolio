@@ -11,6 +11,20 @@
 </head>
 
 <body>
+    <div class="symphony-atmosphere" aria-hidden="true">
+        <svg class="spirit-tree" viewBox="0 0 420 800" xmlns="http://www.w3.org/2000/svg" focusable="false">
+            <defs><linearGradient id="tree-light" x1="0" y1="1" x2=".5" y2="0"><stop stop-color="#172c56"/><stop offset=".55" stop-color="#426ba8"/><stop offset="1" stop-color="#86e6ff"/></linearGradient></defs>
+            <g fill="none" stroke="url(#tree-light)" stroke-linecap="round">
+                <path stroke-width="19" d="M175 800 C200 715 132 638 176 550 S244 411 204 322 S192 161 240 77"/>
+                <path stroke-width="12" d="M174 584 C114 520 82 464 94 383 S53 306 27 255 M215 415 C284 357 315 298 297 218 S329 130 368 105 M202 324 C130 294 109 234 124 179 S92 101 65 74"/>
+                <path stroke-width="7" d="M96 409 C156 377 149 332 119 333 C86 335 101 370 120 356 M298 245 C354 227 389 175 358 152 C329 132 315 167 337 177 C357 183 361 161 348 162 M123 206 C66 198 26 152 47 128 C66 107 91 131 78 145 C68 156 54 144 61 136 M213 163 C285 156 303 104 280 87 C258 72 244 103 265 111 M176 551 C258 554 306 498 283 465 C259 435 229 470 252 487 C270 499 280 480 267 474 M178 704 C242 691 278 726 293 769 M166 747 C112 718 64 743 33 793"/>
+                <path stroke-width="4" d="M47 128 C12 112 9 69 30 56 M280 87 C311 66 305 32 292 15 M94 382 C43 373 22 342 28 317 M297 218 C261 201 258 180 264 167 M124 179 C149 151 151 117 136 95 M239 78 C207 56 209 29 222 15"/>
+            </g>
+        </svg>
+        <div class="music-motes"><span style="--i:0;--x:4%;--delay:-0.0s;--duration:18s">♪</span><span style="--i:1;--x:33%;--delay:-2.7s;--duration:21s">♫</span><span style="--i:2;--x:62%;--delay:-5.4s;--duration:24s">·</span><span style="--i:3;--x:91%;--delay:-8.100000000000001s;--duration:27s">·</span><span style="--i:4;--x:26%;--delay:-10.8s;--duration:30s">♪</span><span style="--i:5;--x:55%;--delay:-13.5s;--duration:18s">♫</span><span style="--i:6;--x:84%;--delay:-16.200000000000003s;--duration:21s">·</span><span style="--i:7;--x:19%;--delay:-18.900000000000002s;--duration:24s">·</span><span style="--i:8;--x:48%;--delay:-21.6s;--duration:27s">♪</span><span style="--i:9;--x:77%;--delay:-24.3s;--duration:30s">♫</span><span style="--i:10;--x:12%;--delay:-27.0s;--duration:18s">·</span><span style="--i:11;--x:41%;--delay:-29.700000000000003s;--duration:21s">·</span><span style="--i:12;--x:70%;--delay:-32.400000000000006s;--duration:24s">♪</span><span style="--i:13;--x:5%;--delay:-35.1s;--duration:27s">♫</span><span style="--i:14;--x:34%;--delay:-37.800000000000004s;--duration:30s">·</span><span style="--i:15;--x:63%;--delay:-40.5s;--duration:18s">·</span></div>
+    </div>
+    <button class="atmosphere-toggle" type="button" aria-pressed="false" aria-label="Pause background animation">Pause ambience</button>
+
     <a class="skip-link" href="#main-content">Skip to content</a>
 
     <header class="top-bar">
@@ -394,6 +408,7 @@
     </dialog>
     <script src="js/script.js"></script>
 
+    <script src="js/atmosphere.js"></script>
 </body>
 
 </html>
