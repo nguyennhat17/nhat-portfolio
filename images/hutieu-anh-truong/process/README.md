@@ -1,0 +1,1 @@
+Add process-01.png, map-01.png, cooking-01.png, orders-01.png, ui-01.png, inspiration-01.png as needed. Continue numbering per category. Preserve actual extensions and provide short captions/source credits for inspiration images.

@@ -1013,3 +1013,6 @@ body { isolation: isolate; }
 @media (max-width: 1100px) { .atmosphere-toggle { bottom: 112px; right: 12px; } }
 @media (max-width: 700px) { .spirit-tree { left: -160px; width: 330px; opacity: .14; } .music-motes span:nth-child(n+9) { display: none; } }
 @media (prefers-reduced-motion: reduce) { .spirit-tree, .music-motes span { animation: none; } .music-motes { display: none; } .atmosphere-toggle { display: none; } }
+
+#hutieu-anh-truong { flex-direction: column; }
+.dream-cover strong { overflow-wrap: anywhere; }
