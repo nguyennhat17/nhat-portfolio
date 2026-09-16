@@ -1016,3 +1016,10 @@ body { isolation: isolate; }
 
 #hutieu-anh-truong { flex-direction: column; }
 .dream-cover strong { overflow-wrap: anywhere; }
+
+.personal-contribution { margin-top: 26px; padding: 22px; border: 1px solid #65468a; border-left: 3px solid #b99ce9; border-radius: 8px; background: #120d1e; }
+.personal-contribution h3 { color: #ffffff; font: 800 16px/1.5 Arial, Helvetica, sans-serif; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.personal-contribution h3:not(:first-child) { margin-top: 22px; }
+.personal-contribution p, .personal-contribution li { color: #ded8e8; font: 18px/1.7 "Times New Roman", Times, serif; }
+.personal-contribution ul { padding-left: 22px; }
+.personal-contribution li + li { margin-top: 8px; }
